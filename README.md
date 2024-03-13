@@ -1,36 +1,93 @@
-# 🚀 RAKT's "Out-of-the-Box" Engineering Challenge 🌟
+# Food Truck Recommender System
 
-Welcome to RAKT's unique and exciting way of discovering new talent. At RAKT, we believe in fun, creativity, and thinking outside the box. This challenge is your playground to showcase your skills in a way that's both enjoyable and insightful.
+This project is a food truck recommender system built using Python and Django + React. The recommender system suggests food trucks to users based on their preferences and current location. It utilizes machine learning techniques such as cosine similarity and nearest neighbors to make personalized recommendations.
 
-## 🎉 Why We Do This Differently
+## Overview
 
-- **Enjoy the Process**: We want you to have fun with this challenge. Think of it as a mini-hackathon where your creativity and innovation can shine.
-- **Reflect Real-World Scenarios**: Just like our work at RAKT, this challenge mirrors real-world scenarios but with a twist of fun and creativity.
-- **No Pressure**: Say goodbye to the traditional, high-pressure coding interviews. We're more interested in how you think and create, not just how you code under stress.
+The recommender system combines user preferences, such as preferred food items, with the geographical proximity of food trucks to the user's location. It ranks food trucks based on their similarity to the user's preferences and their proximity to the user.
 
-## 🌐 The Problem : World Needs More Food Trucks!
+## Features
 
-Our team in San Francisco are on a quest to discover the hidden gems of street food, particularly food trucks! Your challenge is to to make it possible for us to find a food truck no matter where our work takes us in the city.
+- **User Preferences:** Users can specify their preferred food items, such as "tacos," "burgers," or "coffee."
+- **Location-Based Recommendations:** The system considers the user's current location to recommend nearby food trucks.
+- **Personalized Recommendations:** Recommendations are personalized based on the user's food preferences.
+- **Filtering Approved Food Trucks:** Only approved food trucks are considered for recommendations, ensuring quality and compliance.
 
-This is a freeform assignment. You can write a web API that returns a set of food trucks (our team is fluent in JSON). You can write a web frontend that visualizes the nearby food trucks. We also spend a lot of time in the shell, so a CLI that gives us a couple of local options would be great. And don't be constrained by these ideas if you have a better one!
+## How to Run the Project
 
-The only requirement for the assignment is that it give us at least 5 food trucks to choose from a particular latitude and longitude.
+Follow these steps to run the food truck recommender system:
 
-Feel free to tackle this problem in a way that demonstrates your expertise of an area -- or takes you out of your comfort zone. For example, if you build Web APIs by day and want to build a frontend to the problem or a completely different language instead, by all means go for it - learning is a core competency in our group. Let us know this context in your solution's documentation.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/manasseh-fikadu/Food_Trucks_Recommender.git
+   ```
 
-San Francisco's food truck open dataset (csv) is included in this [repo](https://raw.githubusercontent.com/RAKT-Innovations/P1-django-take-home-assignment/main/food-truck-data.csv).
+2. **Install Dependencies:**
+   Navigate to the project directory and install the required dependencies using pip.
+   ```bash
+   cd myproject
+   pip install -r requirements.txt
+   ```
 
+3. **Prepare the Dataset:**
+   Place the cleaned food truck dataset (`food-truck-data-cleaned.csv`) in the project directory.
 
-## 🕹️ Our Approach
-- **Time Commitment:** Dedicate around three hours of focused work to this assignment. Quality matters more to us than quantity, so there's no need to overengineer your solution.
-- **Real-World Simulation:** Treat this task as you would a project intended for production. Create a GitHub repository, use git for version control, and document your project in a README.md file.
-- **Production-Oriented:** Your solution should reflect what you would deliver in a production environment. We understand this might limit the scope within the given time, but we prefer a production-ready approach over a feature-heavy one.
-- **Documentation and Rationale:** Document your technical decisions, trade-offs, and any considerations you had. If you had more time or were to do it again, let us know what you would change or improve.
-- **Flexibility in Tools and Languages:** Please use django as your framework but do not limit yourself to vanilla django, feel free to use everything you'd like on top of it.
+4. **Run the Django Server:**
+   Start the Django server to run the recommender system.
+   ```bash
+   python manage.py runserver
+   ```
 
-## 📬 How to Submit Your Work
-- **Private Fork:** Instead of forking the public repository, create a copy of it. You can do this by cloning the repository to your local machine and then pushing it as a new **public repository** under your own GitHub account.
-- **Document Your Process:** Include a README.md in your submission detailing how to set up and run your script. This should be unique to your implementation and understanding.
-- **Comment Your Code:** Ensure your script is well-documented with comments that explain your logic and approach. This documentation should reflect your personal problem-solving process.
-- **Email Submission:** Rather than creating a pull request, which is public, send us a link to your public repository via email to developer@rakt.org with the title "[P1-Submission] Your name". Ensure your repo is public so that we can access it.
-- **Deadline:** Please submit your assignment within 5 days of receiving these instructions.
+5. **Access the Recommender System:**
+   Once the server is running, access the food truck recommender system through the provided URL (typically `http://localhost:8000/`).
+
+## Usage
+
+- **Input Parameters:** Users need to provide their food preferences and current location.
+- **Output:** The system provides a list of recommended food trucks based on the user's preferences and location.
+
+## Frontend
+Sure! Here's a sample README.md file for your project:
+
+### Technologies Used
+
+- React.js
+- Axios for API requests
+- Tailwind CSS for styling
+- Map component: [Leaflet](https://leafletjs.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/manasseh-fikadu/Food_Trucks_Recommender.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd food-truck-finder
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+5. Run the app:
+
+   ```bash
+   npm start
+   ```
+
+6. Open your browser and visit http://localhost:3000 to view the app.
+
+## Contributors
+
+- Minase Fikadu (@manasseh-fikadu)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
