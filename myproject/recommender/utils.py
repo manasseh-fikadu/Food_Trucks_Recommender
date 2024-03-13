@@ -20,7 +20,8 @@ def get_food_truck_recommendations(user_preferences, user_latitude, user_longitu
     '''
     # Load the cleaned food truck dataset
     # grab the path of the dataset its name is food-truck-data-cleaned.csv
-    dataset_path = os.path.join(os.path.dirname(__file__), 'food-truck-data-cleaned.csv')
+    dataset_path = os.path.join(os.path.dirname(
+        __file__), 'food-truck-data-cleaned.csv')
     df = pd.read_csv(dataset_path)
 
     df = df[df['Status'] == 'APPROVED']
@@ -59,14 +60,14 @@ def get_food_truck_recommendations(user_preferences, user_latitude, user_longitu
     if np.all(combined_scores == 0):
         return json.dumps({"message": "There are not enough food trucks in the dataset to provide recommendations."})
     else:
-        # adjust response based on the length of the dataset
-        if np.shape(combined_scores)[0] > 5:
-            # Find the top 10 food trucks with the highest combined scores
-            top_indices = np.argsort(combined_scores, axis=0)[-10:][::-1]
-        else:
-            top_indices = np.argsort(
-                combined_scores, axis=0)[-np.shape(combined_scores)[0]:][::-1]
+        # Find the top 10 food trucks with the highest combined scores
+        top_indices = np.argsort(combined_scores, axis=0)[-10:][::-1]
 
         # Get the details of the top food trucks
         top_food_trucks = df.iloc[top_indices.flatten()]
-        return top_food_trucks.to_json(orient="records")
+
+        # Filter out duplicate locations
+        unique_locations = top_food_trucks.drop_duplicates(
+            subset=['Latitude', 'Longitude'])
+
+        return unique_locations.to_json(orient="records")
