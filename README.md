@@ -6,6 +6,10 @@ This project is a food truck recommender system built using Python and Django + 
 
 The recommender system combines user preferences, such as preferred food items, with the geographical proximity of food trucks to the user's location. It ranks food trucks based on their similarity to the user's preferences and their proximity to the user.
 
+## Video Explanations 📽️
+- https://www.loom.com/share/14890a06379c4cff952522ee77de40a3?sid=d61155b9-17a8-44fa-897b-0a7a4359daa9
+- https://www.loom.com/share/86a1c492559d4a6f942779413d51790e?sid=61c5c473-bcd4-4c7e-9314-eb079103b7f8
+
 ## Features
 
 - **User Preferences:** Users can specify their preferred food items, such as "tacos," "burgers," or "coffee."
